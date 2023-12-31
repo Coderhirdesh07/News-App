@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/news_nav_graph"
+    app:startDestination="@id/breaking_news_fragment">
+
+    <fragment
+        android:id="@+id/breaking_news_fragment"
+        android:label="BreakingNewsFragment"
+        android:name="com.example.newsapp.fragments.BreakingNews">
+        <action
+            android:id="@+id/action_breaking_news_fragment_to_article_news_fragment"
+            app:destination="@id/article_news_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/search_news_fragment"
+        android:name="com.example.newsapp.fragments.SearchNews"
+        android:label="SearchNewsFragment">
+        <action
+            android:id="@+id/action_search_news_fragment_to_article_news_fragment"
+            app:destination="@id/article_news_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/saved_news_fragment"
+        android:name="com.example.newsapp.fragments.SavedNews"
+        android:label="SavedNewsFragment">
+        <action
+            android:id="@+id/action_saved_news_fragment_to_article_news_fragment"
+            app:destination="@id/article_news_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/article_news_fragment"
+        android:label="ArticleNewsFragment"
+        android:name="com.example.newsapp.fragments.ArticleFragment">
+        <argument
+            android:name="article"
+            app:argType="com.example.newsapp.networkutils.Article" />
+    </fragment>
+
+</navigation>
